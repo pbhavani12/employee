@@ -1,0 +1,99 @@
+a. display all employees whose salary is in the range of 20000 and 45000
+
+-- create a table
+CREATE TABLE employee (
+ empid INTEGER PRIMARY KEY,
+ empname TEXT NOT NULL,
+ empsal FLOAT NOT NULL,
+ empdob VARCHAR(20) NOT NULL,
+ emploc TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO employee VALUES (134, 'Bindu', 23452.8, 13-09-1990, 'Coimbatore');
+INSERT INTO employee VALUES (135, 'Krupa', 19000.8, 16-07-1998, 'Chennai');
+INSERT INTO employee VALUES (136, 'Aishu', 80000.0, 07-08-2010, 'Pune');
+INSERT INTO employee VALUES (137, 'Prasad', 34000.5, 09-10-2001, 'Chennai');
+INSERT INTO employee VALUES (138, 'Tarun', 7810.8, 20-02-2001, 'Hyderabad');
+INSERT INTO employee VALUES (139, 'Kruthi', 1000.9, 06-12-1999, 'Banglore');
+
+
+-- fetch some values
+SELECT * FROM employee WHERE empsal BETWEEN 20000 AND 45000;
+-=======================================================================================================
+b. display all employees whose name starts with "T"
+
+-- create a table
+CREATE TABLE employee (
+ empid INTEGER PRIMARY KEY,
+ empname TEXT NOT NULL,
+ empsal FLOAT NOT NULL,
+ empdob VARCHAR(20) NOT NULL,
+ emploc TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO employee VALUES (134, 'Bindu', 23452.8, 13-09-1990, 'Coimbatore');
+INSERT INTO employee VALUES (135, 'Krupa', 19000.8, 16-07-1998, 'Chennai');
+INSERT INTO employee VALUES (136, 'Aishu', 80000.0, 07-08-2010, 'Pune');
+INSERT INTO employee VALUES (137, 'Prasad', 34000.5, 09-10-2001, 'Chennai');
+INSERT INTO employee VALUES (138, 'Tarun', 7810.8, 20-02-2001, 'Hyderabad');
+INSERT INTO employee VALUES (139, 'Kruthi', 1000.9, 06-12-1999, 'Banglore');
+
+
+-- fetch some values
+SELECT * FROM employee WHERE empname LIKE 'T%'
+===========================================================================================================
+c. display all  departments ,whose location is "Chennai"
+CREATE TABLE department (
+ deptid INTEGER PRIMARY KEY,
+ deptname TEXT NOT NULL,
+ deptloc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (123, 'Accountant', 'Bangalore');
+INSERT INTO department VALUES (124, 'Manager', 'Chennai');
+INSERT INTO department VALUES (125, 'HR', 'Pune');
+INSERT INTO department VALUES (126, 'Cco-ordinator', 'Chennai');
+
+SELECT * FROM department WHERE deptloc = 'Chennai';
+==============================================================================================================
+d. filter the department whose department loc in "Chennai","hyderabad"
+
+CREATE TABLE department (
+ deptid INTEGER PRIMARY KEY,
+ deptname TEXT NOT NULL,
+ deptloc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (123, 'Accountant', 'Bangalore');
+INSERT INTO department VALUES (124, 'Manager', 'Chennai');
+INSERT INTO department VALUES (125, 'HR', 'Hyderabad');
+INSERT INTO department VALUES (126, 'Cco-ordinator', 'Chennai');
+
+SELECT * FROM department WHERE deptloc = 'Chennai' OR deptloc ='Hyderabad';
+===================================================================================================================
+e. filter the employees whose emploc not in "Chennai","hyderabad"
+
+-- create a table
+CREATE TABLE employee (
+ empid INTEGER PRIMARY KEY,
+ empname TEXT NOT NULL,
+ empsal FLOAT NOT NULL,
+ empdob VARCHAR(20) NOT NULL,
+ emploc TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO employee VALUES (134, 'Bindu', 23452.8, 13-09-1990, 'Coimbatore');
+INSERT INTO employee VALUES (135, 'Krupa', 19000.8, 16-07-1998, 'Chennai');
+INSERT INTO employee VALUES (136, 'Aishu', 80000.0, 07-08-2010, 'Pune');
+INSERT INTO employee VALUES (137, 'Prasad', 34000.5, 09-10-2001, 'Chennai');
+INSERT INTO employee VALUES (138, 'Tarun', 7810.8, 20-02-2001, 'Hyderabad');
+INSERT INTO employee VALUES (139, 'Kruthi', 1000.9, 06-12-1999, 'Banglore');
+
+
+-- fetch some values
+SELECT * FROM employee WHERE NOT emploc = 'Hyderabad' AND NOT emploc = 'Chennai';
+======================================================================================================================
+
+
+
+

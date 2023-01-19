@@ -1,0 +1,12 @@
+CREATE TABLE department (
+ deptid INTEGER PRIMARY KEY,
+ deptname TEXT NOT NULL,
+ deptloc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (123, 'Accountant', 'Bangalore');
+INSERT INTO department VALUES (124, 'Manager', 'Chennai');
+INSERT INTO department VALUES (125, 'HR', 'Pune');
+INSERT INTO department VALUES (126, 'Cco-ordinator', 'Chennai');
+
+SELECT * FROM department;
